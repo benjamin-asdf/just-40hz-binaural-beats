@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script>var SCITTLE_NREPL_WEBSOCKET_PORT = 1340;</script>
     <script src="https://cdn.jsdelivr.net/npm/scittle@0.3.10/dist/scittle.js" type="application/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/scittle@0.3.10/dist/scittle.nrepl.js" type="application/javascript"></script>
-    <script>var SCITTLE_NREPL_WEBSOCKET_PORT = 1340;</script>
     <script type="application/x-scittle" src="beats.cljs"></script>
   </head>
   <body>
-    <div lol>
+    <div class="slidecontainer">
+      <input type="range" min="120000" max="250000" value="15274"
+      class="slider" id="frequencyRange" onchange="update_app(this.value)"> </div>
+    <div id="frequencyDisplay"> </div>
   </body>
 </html>
