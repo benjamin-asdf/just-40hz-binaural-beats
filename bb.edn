@@ -1,0 +1,5 @@
+{:deps
+ {sci.nrepl/sci.nrepl
+  {:git/sha "b75700da7797f9fc2b4ef1bef9df7230f9fd1e8c"
+   :git/url "github.com:babashka/sci.nrepl.git.git"}}
+ :tasks {browse (shell "xdg-open" "index.html")}}
