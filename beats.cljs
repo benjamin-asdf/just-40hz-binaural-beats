@@ -7,21 +7,21 @@
 
 (def panners
   {:left
-   (let [left? true]
-     (let [panner (. ctx createStereoPanner)]
-       (set! (.. panner -pan -value) (if left? -1 1))
-       (.connect panner ctx.destination)
-       panner))
+   (let [left? true
+         panner (. ctx createStereoPanner)]
+     (set! (.. panner -pan -value) (if left? -1 1))
+     (.connect panner ctx.destination)
+     panner)
    :right
-   (let [left? nil]
-     (let [panner (. ctx createStereoPanner)]
-       (set! (.. panner -pan -value) (if left? -1 1))
-       (.connect panner ctx.destination)
-       panner))})
+   (let [left? nil
+         panner (. ctx createStereoPanner)]
+     (set! (.. panner -pan -value) (if left? -1 1))
+     (.connect panner ctx.destination)
+     panner)})
 
 (defn update-display! [value]
   (set! (.-innerHTML display)
-        (str "Base frequency: " value)))
+        (str "Base frequency: " value " hz")))
 
 (def get-oscillator
   (memoize
@@ -46,3 +46,4 @@
 (set! (.-update_app js/window) update-app)
 
 (update-app (* 1000 152.74))
+(set! (.-value slider) (* 1000 152.74))
