@@ -1,7 +1,7 @@
 (ns beats)
 
 (def binaural-beat-freq 40)
-(defonce ctx (js/window.AudioContext.))
+(defonce ctx (or (js/window.AudioContext.) (js/window.webkitAudioContext.)))
 (def slider (js/document.getElementById "frequencyRange"))
 (def display (js/document.getElementById "frequencyDisplay"))
 
