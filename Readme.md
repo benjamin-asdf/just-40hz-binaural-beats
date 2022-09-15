@@ -3,6 +3,10 @@ I wanted just some binaural beats, without bloat.
 
 Blog post about this project here https://benjamin-asdf.github.io/faster-than-light-memes/.
 
+# Bugs
+
+Sound on mobile not working. - A setting?
+
 # Acknowledgments
 
 Thanks Mr. Bork for an amazing tool https://github.com/babashka/scittle
