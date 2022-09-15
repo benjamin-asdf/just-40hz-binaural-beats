@@ -43,7 +43,9 @@
     (-> panners :left (oscillate frequency-value))
     (update-display! frequency-value)))
 
-(set! (.-update_app js/window) update-app)
+(defn start-app []
+  (update-app (* 1000 152.74))
+  (set! (.-value slider) (* 1000 152.74)))
 
-(update-app (* 1000 152.74))
-(set! (.-value slider) (* 1000 152.74))
+(set! (.-update_app js/window) update-app)
+(set! (.-start_app js/window) start-app)
