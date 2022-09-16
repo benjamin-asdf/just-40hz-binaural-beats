@@ -5,7 +5,7 @@ Blog post about this project here https://benjamin-asdf.github.io/faster-than-li
 
 # Bugs
 
-Sound on mobile not working. - A setting?
+* [X] Sound on mobile not working. - A setting?
 
 # Acknowledgments
 
