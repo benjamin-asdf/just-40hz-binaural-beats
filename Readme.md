@@ -6,6 +6,7 @@ Blog post about this project here https://benjamin-asdf.github.io/faster-than-li
 # Bugs
 
 * [X] Sound on mobile not working. - A setting?
+* [ ] Make the ui bigger on mobile
 
 # Acknowledgments
 
