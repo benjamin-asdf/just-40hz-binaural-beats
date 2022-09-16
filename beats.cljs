@@ -12,8 +12,7 @@
     panner))
 
 (def panners
-  (delay {:left (->panner true)
-    :right (->panner false)}))
+  (delay {:left (->panner true) :right (->panner false)}))
 
 (defn update-display! [value]
   (set! (.-innerHTML display)
