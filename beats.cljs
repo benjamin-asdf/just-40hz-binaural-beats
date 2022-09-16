@@ -5,19 +5,15 @@
 (def slider (js/document.getElementById "frequencyRange"))
 (def display (js/document.getElementById "frequencyDisplay"))
 
+(defn ->panner [left?]
+  (let [panner (. ctx createStereoPanner)]
+    (set! (.. panner -pan -value) (if left? -1 1))
+    (.connect panner ctx.destination)
+    panner))
+
 (def panners
-  {:left
-   (let [left? true
-         panner (. ctx createStereoPanner)]
-     (set! (.. panner -pan -value) (if left? -1 1))
-     (.connect panner ctx.destination)
-     panner)
-   :right
-   (let [left? nil
-         panner (. ctx createStereoPanner)]
-     (set! (.. panner -pan -value) (if left? -1 1))
-     (.connect panner ctx.destination)
-     panner)})
+  (delay {:left (->panner true)
+    :right (->panner false)}))
 
 (defn update-display! [value]
   (set! (.-innerHTML display)
@@ -39,8 +35,8 @@
 
 (defn update-app [frequency-value]
   (let [frequency-value (/ frequency-value 1000.0)]
-    (-> panners :right (oscillate (+ frequency-value binaural-beat-freq)))
-    (-> panners :left (oscillate frequency-value))
+    (-> @panners :right (oscillate (+ frequency-value binaural-beat-freq)))
+    (-> @panners :left (oscillate frequency-value))
     (update-display! frequency-value)))
 
 (defn start-app []
