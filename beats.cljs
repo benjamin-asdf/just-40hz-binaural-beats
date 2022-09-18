@@ -16,7 +16,7 @@
 
 (defn update-display! [value]
   (set! (.-innerHTML display)
-        (str "Base frequency: " value " hz")))
+        (str "Base frequency: " value " Hz")))
 
 (def get-oscillator
   (memoize
