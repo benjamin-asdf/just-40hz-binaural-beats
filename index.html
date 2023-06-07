@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- <script>var SCITTLE_NREPL_WEBSOCKET_PORT = 1340;</script> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Just 40Hz binaural beats</title>
+    <script>var SCITTLE_NREPL_WEBSOCKET_PORT = 1340;</script>
     <script src="https://cdn.jsdelivr.net/npm/scittle@0.3.10/dist/scittle.js" type="application/javascript"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/scittle@0.3.10/dist/scittle.nrepl.js" type="application/javascript"></script> -->
     <script type="application/x-scittle" src="beats.cljs"></script>
+
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    gap: 1rem;
+    margin: 0;
+  }
+</style>
+
   </head>
   <body>
     <h1>Just 40Hz binaural beats</h1>
